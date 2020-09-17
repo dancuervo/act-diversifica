@@ -1,0 +1,13 @@
+Senhas para uso local - nada privado
+
+nome DB		act-diversifica
+user 		diversifica-wp
+senha 		f!asd@(*KBKJ23u&gg_0
+host 		localhost
+
+prefixo 	wp_
+
+titulo do site
+	Rede de diversificação de áreas cultivadas com tabaco
+usuario do site
+	User-ACT -> senha: Leuz*bEKvm17b9KRcs
