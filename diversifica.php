@@ -2,10 +2,16 @@
 /*
 Template Name: Template página principal 'Programa Diversifica'
 Template Post Type: page
-*/
-?>
 
-<?php
+Esta página realiza querys a páginas filhas de 'diversifica' definidas no Wordpress:
+
+    diversifica/
+        paralaxe-destaque
+        sobre-diversifica
+        biblioteca
+        noticias
+
+*/
 
     //lorem ipsum - text placeholder para 'php wp_query elses'
     $lorem_ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at elementum eu. Sagittis aliquam malesuada bibendum arcu vitae elementum. Placerat vestibulum lectus mauris ultrices eros in cursus. Id eu nisl nunc mi ipsum faucibus. Ac feugiat sed lectus vestibulum mattis. In nulla posuere sollicitudin aliquam ultrices sagittis orci. Sed libero enim sed faucibus. Libero justo laoreet sit amet cursus sit. Tellus in hac habitasse platea dictumst. Arcu non odio euismod lacinia at quis risus sed vulputate. Id aliquet lectus proin nibh nisl condimentum id. Molestie a iaculis at erat pellentesque. Cursus sit amet dictum sit amet. Sit amet facilisis magna etiam tempor orci eu lobortis. Imperdiet massa tincidunt nunc pulvinar sapien et ligula. Non enim praesent elementum facilisis. Posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Facilisis gravida neque convallis a cras semper auctor. Massa id neque aliquam vestibulum morbi blandit cursus.";
@@ -76,6 +82,8 @@ Template Post Type: page
 </div>
   <!--end navbar-->
   
+
+  <!-- SEÇÃO SOBRE DIVERSIFICA -->
   <div class="row justify-content-between pt-5">
     <br>
     <br>
@@ -91,7 +99,7 @@ Template Post Type: page
     <!---->
     <!-- THE LOOP -->
         <?php
-            //The Query
+            //The Query -> página 'sobre-diversifica'
            
             $argumento = array( 'pagename' => 'diversifica/sobre-diversifica' );
             $query = new WP_Query( $argumento );
@@ -109,24 +117,44 @@ Template Post Type: page
     </div>
     <div class="col-md-2"></div>
   </div>
-  
+    <!-- FIM SEÇÃO SOBRE DIVERSIFICA -->
+
+  <!-- SESSÃO TEXTO DESTAQUE COM FUNDO PARALAXE -->
   <div class="row" id="paralaxe-background">
     
-    <div class="col-md-4"></div>
-    <div class="col-md-4 align-middle">
-        <p class="lead text-light">
-        <br><br>
-        "O Brasil é o segundo maior produtor mundial de tabaco, atividade que envolve mais de 150 mil famílias em cerca 700 municípios principalmente dos Estados do Rio Grande do Sul, Paraná e Santa Catarina.
-        </p>
+    <div class="col-md-2"></div>
+    <div class="col-md-8 align-middle lead text-light">
         
-        <p class="lead text-light">
-        O processo de diversificação é uma construção coletiva para integração do agricultor a um novo modelo de produção, baseando-se prioritariamente na agroecologia, e busca a sua inserção num coletivo com o qual não estava familiarizado pois a relação com a indústria não o conduzia a isso."
-        </p>
+        <div class="py-5">
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!-- THE LOOP -->
+        <?php
+        
+            //The Query -> 'paralaxe-destaque'
+            $argumento = array( 'pagename' => 'diversifica/paralaxe-destaque' );
+            $query = new WP_Query( $argumento );
+            if( $query ){
+                $query->the_post(  );
+                echo get_the_content(  );
+            }else{
+                echo $lorem_ipsum;
+            }
+            wp_reset_postdata(  ); ?>
+        </div>
+       
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-2"></div>
+    <!-- FIM SESSÃO TEXTO DESTAQUE COM FUNDO PARALAXE -->
+
 
   </div>
   
+  <!-- SESSÃO BIBLIOTECA -->
   <div class="row mx-auto bg-light pt-5" id="biblioteca">
   
         
@@ -154,10 +182,11 @@ Template Post Type: page
     <div class="col-md-2"></div>
   </div>
 
+
   <div class="row bg-light">
     <div class="col-md-2"></div>
     <div class="col-md-2">
-        <img src="<?php echo get_theme_file_uri(  ) ;?>/assets/images/dest-factsheet.jpg" alt="" srcset="" class="img-fluid">
+        <img src="<?php echo get_theme_file_uri(  ) ;?>/assets-div/images/dest-factsheet.jpg" alt="" srcset="" class="img-fluid">
     </div>
     <div class="col-md-6">
     
@@ -175,35 +204,189 @@ Template Post Type: page
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
+    <!-- FIM SESSÃO BIBLIOTECA -->
             
-                    <!--CAROUSEL-->
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <!--CAROUSEL-->
+        <div id="carouselExampleCaptions" class="carousel slide py-5" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="6"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="7"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="8"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="9"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="10"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="11"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="12"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="13"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="14"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="15"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="16"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="17"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="18"></li>
+
         </ol>
-        <div class="carousel-inner">
+        <!--CAROUSEL ELEMENTS  -->
+        <!-- carousel height fixed inline to 100% viewport height-->
+        <div class="carousel-inner" style="height: 100vh;">
+
             <div class="carousel-item active">
-            <img src="<?php echo get_theme_file_uri( ) ;?>/assets/images/placeholder.jpg" class="d-block w-100" alt="...">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-01.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </div>
             </div>
+
             <div class="carousel-item">
-            <img src="<?php echo get_theme_file_uri( ) ;?>/assets/images/placeholder.jpg" class="d-block w-100" alt="...">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-02.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             </div>
+
             <div class="carousel-item">
-            <img src="<?php echo get_theme_file_uri( ) ;?>/assets/images/placeholder.jpg" class="d-block w-100" alt="...">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-06.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
             </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-07.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            </div>
+            
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-08.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-09.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-10.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-11.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-12.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-13.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-14.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-15.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-16.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-17.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-18.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-19.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-20.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-21.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            </div>
+
+            <div class="carousel-item">
+            <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/img-diversifica/diversifica-22.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+            </div>
+            
+
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -215,21 +398,20 @@ Template Post Type: page
             <span class="sr-only">Next</span>
         </a>
         </div>
+        <!-- END CAROUSEL ELEMENTS  -->
+
         <hr>
-            <!--END CAROUSEL-->
+        <!--END CAROUSEL-->
     
     </div>
     <div class="col-md-2"></div>
   </div>
 
   <!-- VIDEO ROWS-->
-  <div class="row  bg-light pt-5">
+  <div class="row  bg-light py-5">
             <div class="col-md-2"></div>
             <div class="col-md-2"><h3 class="text-secondary">Vídeos</h3></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-2"></div>
+            <div class="col-md-8"></div>
   </div>
 
   <div class="row bg-light">
@@ -281,7 +463,7 @@ Template Post Type: page
 
     <div class="col-md-2"></div>
     <div class="col-md-2">
-        <img src="<?php echo get_theme_file_uri( ) ;?>/assets/images/dest-noticias.png" alt="" srcset="" class="img-fluid">
+        <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/images/dest-noticias.png" alt="" srcset="" class="img-fluid">
     </div>
     <div class="col-md-6">
     
@@ -312,7 +494,7 @@ Template Post Type: page
   </div>
  <!-- END NOTICIAS ROW -->
 
-<!-- PODCAST ROW -->
+<!-- PODCAST ROW  - SOUNDCLOUD IFRAMES-->
 
   <div class="row bg-light pt-5" id="podcast">
         <div class="col-md-2"></div>
@@ -321,18 +503,17 @@ Template Post Type: page
             <p>
                 Confira o podcast No Mundo do Tabaco, uma parceria da ACT com a Associação Brasileira de Radiodifusão Comunitária do Estado de Santa Catarina, que irá mostrar os diversos aspectos envolvidos na produção do fumo.
             </p>
-            <button class="btn btn-lg btn-success btn-block">
-            <svg width="10em" height="10em" viewBox="0 0 16 16" class="bi bi-music-note-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
-            <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
-            <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
-            <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
-            </svg>
-            </button>
+            
+            <!-- SOUNDCLOUD IFRAME -->
+            <div class="shadow">
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1139626555&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/user-219398891" title="ACTbr" target="_blank" style="color: #cccccc; text-decoration: none;">ACTbr</a> · <a href="https://soundcloud.com/user-219398891/sets/no-mundo-do-tabaco-actbr" title="No Mundo do Tabaco - ACTBr" target="_blank" style="color: #cccccc; text-decoration: none;">No Mundo do Tabaco - ACTBr</a></div>
+            </div>
+            <!-- END SOUNDCLOUD IFRAME -->
+
             <hr>
         </div>
         <div class="col-md-2"></div>
-
         <div class="col-md-2"></div>
         <div class="col-md-8">
             
@@ -340,7 +521,7 @@ Template Post Type: page
         <div class="col-md-2"></div>
   </div>
 
-  <div class="row pt-5" id="campanha">
+  <div class="row pt-5 bg-light" id="campanha">
     <div class="col-md-2"></div>
     <div class="col-md-8">
             <h2 class="text-secondary">
@@ -350,19 +531,19 @@ Template Post Type: page
                 Confira o material produzido para a campanha.
             </p>
 
-            <button class="btn btn-lg btn-info btn-block">
-            <svg width="10em" height="10em" viewBox="0 0 16 16" class="bi bi-music-note-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
-            <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
-            <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
-            <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
-            </svg>
-            </button>
+            <!-- SOUNDCLOUD IFRAME -->
+            <div class="shadow">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1140179587&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/user-219398891" title="ACTbr" target="_blank" style="color: #cccccc; text-decoration: none;">ACTbr</a> · <a href="https://soundcloud.com/user-219398891/sets/spot-no-mundo-do-tabaco" title="Spot - No Mundo do Tabaco" target="_blank" style="color: #cccccc; text-decoration: none;">Spot - No Mundo do Tabaco</a></div>
+            </div>
+            <!-- END SOUNDCLOUD IFRAME -->
             <hr>
 
     </div>
     <div class="col-md-2"></div>
   </div>
+  <!-- PODCAST ROW  - SOUNDCLOUD IFRAMES-->
+
 
   <div class="row text-light py-5  mx-auto" style="background-color:#F56F11;">
             <div class="col-md-4"></div>
@@ -379,7 +560,7 @@ Template Post Type: page
     <div class="col-md-2"></div>
         
     <div class="col-md-2">
-        <img src="<?php echo get_theme_file_uri( ) ;?>/assets/images/logo_rodape.jpg" alt="" srcset="">
+        <img src="<?php echo get_theme_file_uri( ) ;?>/assets-div/images/logo_rodape.jpg" alt="" srcset="">
             <p>
                 <a href="mailto:act@actbr.org.br">act@actbr.org.br</a><br>
                 <a href="http://facebook.com/actbr" target="_blank" rel="noopener noreferrer">facebook</a><br>
@@ -388,7 +569,7 @@ Template Post Type: page
                 <a href="https://www.instagram.com/insta.act/" target="_blank" rel="noopener noreferrer">instagram</a><br>
             </p>
     </div>
-
+      <div class="col-md-1"></div>
     <div class="col-md-4">
         <div class="form-group">
             <label for="exampleFormControlInput1">Email</label>
@@ -401,11 +582,12 @@ Template Post Type: page
         </div>
         </form>
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-1"></div>
   </div>
             <hr>
   </div>
 
+<!-- floating bottom right arrow link button back to top -->
 <a href="#destaque" class="alert-dark">
     <svg id="arrow-top" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>

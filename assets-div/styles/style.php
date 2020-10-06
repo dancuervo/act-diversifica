@@ -1,5 +1,7 @@
 <?php
-//https://css-tricks.com/css-variables-with-php/
+
+    // convert php file into text/css
+    //https://css-tricks.com/css-variables-with-php/
     $absolute_path = explode('wp-content', $_SERVER['SCRIPT_FILENAME']);
     $wp_load = $absolute_path[0] . 'wp-load.php';
     require_once($wp_load);
@@ -12,7 +14,7 @@ html{
 }
 
 #destaque{
-    background-image:   url("<?php echo get_theme_file_uri(  ) ;?>/assets/images/section-1.jpg");
+    background-image:   url("<?php echo get_theme_file_uri(  ) ;?>/assets-div/images/section-1.jpg");
     background-repeat:  no-repeat;
     background-size:    cover;
     height:             100vh;
@@ -29,14 +31,14 @@ html{
 
 
 #paralaxe-background{
-    background-image:   url("<?php echo get_theme_file_uri() ;?>/assets/images/bg-section-video.jpg");
+    background-image:   url("<?php echo get_theme_file_uri() ;?>/assets-div/images/bg-section-video.jpg");
     background-repeat:  no-repeat;
     background-size:    cover;
     height:             100vh;
     text-align:         center;
 
 }
-
+/* main panel navigatino arrow */
 #chevron{
     animation-name:pulse;
     animation-duration:5s;
@@ -54,7 +56,7 @@ html{
     background-color:#F56F11;
 }
 
-
+/* floating bottom right arrow link button back to top */
 #arrow-top {
 	position: fixed;
 	right: 5px;

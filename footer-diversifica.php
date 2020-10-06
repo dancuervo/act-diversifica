@@ -6,5 +6,5 @@
 
 
 <!-- jquery #destaque-->
-<script src="<?php echo get_theme_template_uri() ;?>/assets/js/scripts.js"></script>
+<script src="<?php echo get_theme_template_uri() ;?>/assets-div/js/scripts.js"></script>
 </html>
